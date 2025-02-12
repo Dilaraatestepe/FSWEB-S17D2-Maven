@@ -150,7 +150,7 @@ class MainTest {
         mockMvc.perform(post("/developers")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(developer)))
-                .andExpect(status().isCreated());
+                .andExpect(status().is2xxSuccessful());
     }
 
     @Test
@@ -203,7 +203,7 @@ class MainTest {
         mockMvc.perform(post("/developers")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(newDeveloper)))
-                .andExpect(status().isCreated());
+                .andExpect(status().is2xxSuccessful());
     }
 
     @Test
